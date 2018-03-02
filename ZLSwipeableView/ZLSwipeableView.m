@@ -141,6 +141,15 @@
     }
 }
 
+- (void)snappingTopView {
+  UIView *topView = [self topView];
+  if (topView == nil) {
+    return;
+  }
+  ViewManager *manager = [self managerForView:topView];
+  [manager setStateSnappingAtContainerViewCenter];
+}
+
 - (void)swipeTopViewToLeft {
     [self swipeTopViewInDirection:ZLSwipeableViewDirectionLeft];
 }

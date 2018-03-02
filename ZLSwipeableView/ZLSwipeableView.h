@@ -103,6 +103,7 @@ typedef NS_ENUM(NSUInteger, ZLSwipeableViewDirection) {
 // history
 @property (nonatomic, readonly) NSArray<UIView *> *history;
 @property (nonatomic) NSUInteger numberOfHistoryItem;
+@property (nonatomic, assign) BOOL freezing;
 
 // Customization
 @property (nonatomic, strong) id<ZLSwipeableViewAnimator> viewAnimator;
@@ -121,6 +122,8 @@ typedef NS_ENUM(NSUInteger, ZLSwipeableViewDirection) {
 - (void)rewind;
 
 - (void)discardAllViews;
+
+- (void)snappingTopView;
 
 - (void)swipeTopViewToLeft;
 

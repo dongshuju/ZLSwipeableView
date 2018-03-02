@@ -88,7 +88,7 @@ static const CGFloat kAnchorViewWidth = 1000;
 #pragma mark - Action
 
 - (void)handlePan:(UIPanGestureRecognizer *)recognizer {
-  if (!_swipeableView) {
+  if (!_swipeableView || _swipeableView.freezing) {
     return;
   }
   CGPoint translation = [recognizer translationInView:_containerView];

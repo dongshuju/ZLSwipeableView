@@ -141,6 +141,12 @@
     }
 }
 
+- (void)removeView:(UIView *)view {
+    if ([[self allViews] containsObject:view]) {
+        [self removeView:view];
+    }
+}
+
 - (void)snappingTopView {
   UIView *topView = [self topView];
   if (topView == nil) {

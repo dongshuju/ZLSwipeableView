@@ -141,9 +141,9 @@
     }
 }
 
-- (void)removeView:(UIView *)view {
+- (void)removeViewFromActiveViews:(UIView *)view {
     if ([[self allViews] containsObject:view]) {
-        [self removeView:view];
+        [self remove:view];
     }
 }
 

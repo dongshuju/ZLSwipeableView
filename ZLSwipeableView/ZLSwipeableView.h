@@ -123,6 +123,8 @@ typedef NS_ENUM(NSUInteger, ZLSwipeableViewDirection) {
 
 - (void)rewind;
 
+- (void)updateViews;
+
 - (void)discardAllViews;
 
 - (void)snappingTopView;

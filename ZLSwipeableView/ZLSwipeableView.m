@@ -271,6 +271,20 @@
     }
 }
 
+-(void)updateAnimationViews {
+    NSArray<UIView *> *activeViews = [self activeViews];
+    for (NSUInteger i = 0; i < activeViews.count; i++) {
+        UIView *view = activeViews[i];
+        view.userInteractionEnabled = true;
+        BOOL shouldBeHidden = i >= self.numberOfActiveViews;
+        view.hidden = shouldBeHidden;
+        if (shouldBeHidden) {
+            continue;
+        }
+        [self.viewAnimator animateView:view index:i views:activeViews swipeableView:self];
+    }
+}
+
 - (void)swipeView:(UIView *)view
          location:(CGPoint)location
   directionVector:(CGVector)directionVector {
